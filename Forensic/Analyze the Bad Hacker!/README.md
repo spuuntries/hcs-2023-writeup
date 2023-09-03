@@ -16,8 +16,8 @@ Anyway, so what I did was, I looked for an online pcap viewer instead, and found
 Uploading the pcap file there results in this "analyzed" result:
 ![A-packets analysis](./assets/image.png)
 
-1. First question asked for the name and version of the server that was analyzed, so what I did was I looked through HTTP Communication, specifically `GET`, because usually `GET` response headers also include the server type/software that returned the response. What I found was this:
-   ![GET Request headers](./assets/image-1.png)
+1. First question asked for the name and version of the server that was analyzed, so what I did was I looked through HTTP Communication, specifically `GET`, because usually `GET` response headers also include the server type/software that returned the response. What I found was this:  
+    ![GET Request headers](./assets/image-1.png)  
    `Maltrail/0.53`  
    So that's question 1 down.
 
