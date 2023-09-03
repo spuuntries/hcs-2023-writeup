@@ -9,7 +9,7 @@
 
 So, at first, we were given this `.pcapng` file, titled `budi.pcapng`.
 
-At first, I was a bit turned down by this. Mostly due to the fact that I didn't have wireshark installed on my current machine, I didn't want to boot up my kali live instance, and that I'm currently on a relatively slow internet connection. So download of wireshark and installation could and did prove to be quite the hassle, especially due to the time limit later on.
+At first, I was a bit turned down by this. Mostly due to the fact that I didn't have wireshark installed on my current machine, I didn't want to boot up my kali live instance, and that I'm currently on a relatively slow internet connection. So installation of wireshark could, and did, prove to be quite the hassle, especially due to the time limit later on.
 
 Anyway, so what I did was, I looked for an online pcap viewer instead, and found `https://apackets.com/`.
 
