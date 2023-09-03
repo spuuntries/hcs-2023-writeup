@@ -54,7 +54,7 @@ So that's 3 down.
 The analysis from apackets wasn't deep enough to get to socket packets which are raw TCP, so I had to install wireshark to do the packet-by-packet analysis. Dumped into wireshark, we see this:
 ![A LOT OF PACKETS](./assets/image-3.png)
 A **LOT** of packets, so to narrow it down, basing off number 3, we filter for TCP port 9999, that narrows it down to 87 packets.
-![A lot to just 87 packets](image-4.png)
+![A lot to just 87 packets](./assets/image-4.png)
 Now it's really just a matter of us scrolling down frame by frame to analyze what the post-exploit shell did.
 
     1. At 2624-2625 the shell executes an `ls` command
