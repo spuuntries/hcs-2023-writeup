@@ -1,6 +1,6 @@
 # **PDF Hide and Seek**
 
-**Difficulty:** Easy (Personal Rating)  
+**Difficulty:** Easy (Personal Rating, not provided)  
 **Flag:** `HCS{G00d_St4rt_W1th_PDF_0x13458}`
 
 ---

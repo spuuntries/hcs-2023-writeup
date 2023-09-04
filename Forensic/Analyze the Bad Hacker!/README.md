@@ -1,6 +1,6 @@
 # **Analyze the Bad Hacker!**
 
-**Difficulty:** Tedious and Meticulous (Personal Rating)  
+**Difficulty:** Tedious and Meticulous (Personal Rating, not provided)  
 **Flag:** `HCS{f0R3n51k_1tu_m3n4rik}`
 
 ---
