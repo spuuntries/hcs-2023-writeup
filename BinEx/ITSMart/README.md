@@ -5,7 +5,7 @@
 - Easy. (provided rating)
 - A bit out-of-the-box (personal rating)
 
-**Flag:** HCS{m1nus_dikit_g4_ngaruh}
+**Flag:** `HCS{m1nus_dikit_g4_ngaruh}`
 
 ---
 
