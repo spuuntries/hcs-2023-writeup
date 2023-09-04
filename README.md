@@ -4,7 +4,12 @@ HCS CTF 2023 Writeup. Solved 8 out of a lot. All writeups will be written biling
 
 List of contents:
 
-1. Forensics:
+1. Reverse Engineering:
+   - [snake](./RevEng/snake/)
+2. Binary Exploitation:
+   - [ITSMart](./BinEx/ITSMart/)
+   - [scream](./BinEx/scream/)
+3. Forensics:
    - [Analyze the Bad Hacker!](./Forensic/Analyze%20the%20Bad%20Hacker!/)
    - [PDeF Hide and Seek](./Forensic/PDeF-HnS/)
 
