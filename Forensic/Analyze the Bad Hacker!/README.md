@@ -78,6 +78,8 @@ To recap, it moved to `/tmp` and writes a file named `.hmm.sh`, so the absolute 
 🎉🎉🎉
 ![Finished!](./assets/image-9.png)
 
+---
+
 ## **ID**
 
 Untuk challenge yang ini, kita diberikan file `.pcapng` bernama `budi.pcapng`.
