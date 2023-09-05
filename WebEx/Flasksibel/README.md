@@ -8,7 +8,7 @@
 ## **EN**
 
 In this challenge, we're provided with a flask-based website and its [source code](./dist/). The website has a simple form consisting of just a text input and a submission button.  
-![UI](image.png)
+![UI](./assets/image.png)
 
 When submitted, the flask server renders the input as part of the html through a template string.
 
@@ -53,7 +53,7 @@ So the first entrypoint involves the templating mechanism. The template mechanis
 What's bad about it, is it doesn't escape/sanitize special characters that can result in the escaping of the template and dropping straight into python code.
 
 This can be confirmed by inputting `{{ 7 * 7 }}`, where if the sanitization was done properly, we'd just see the input, instead we see 49, indicating RCE:
-![It executed it](image-1.png)
+![It executed it](./assets/image-1.png)
 
 So now, it's just a matter of executing `ls` and `cat` somehow, without having to use the words/characters in the blacklist. Working off the [reference I had](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection/jinja2-ssti), what I needed was a built-in python class object to start off with.
 
@@ -78,7 +78,7 @@ Then, to access the methods I did this:
 ```
 
 This returns a large list of methods.
-![Alt text](image-2.png)
+![Alt text](./assets/image-2.png)
 Skimming through, what I was looking for was either a method to load up a file (e.g. `open()`) or one to open up a shell (e.g. `check_output()` or `Popen()`).
 
 At index 352, I see _just_ the tool that I needed, `Popen`. `Popen` wasn't exactly ideal, as my experience with it before has only ever been to use it as a worker spawner w/o bidirectional comms, but we'll have to make do.
@@ -96,14 +96,14 @@ Using this with `ls`, I tracked the flag down to `/` under the name `flag_ssti.t
 ```
 
 🎉🎉🎉🎉
-![WIN](image-3.png)
+![WIN](./assets/image-3.png)
 
 ---
 
 ## **ID**
 
 Di challenge yang ini kita diberikan website berbasis flask dan [source code](./dist/)nya. Websitenya simpel, form dengan input teks dan button untuk submit.  
-![UI](image.png)
+![UI](./assets/image.png)
 
 Saat disubmit, teks dirender di server ke htmlnya menggunakan template string.
 
@@ -148,7 +148,7 @@ Jadi pintu masuk yang pertama itu melalui mekanisme templatenya, dia menggunakan
 Yang gak bener itu adalah, kalo kita lihat, dia nggak sanitasi _special characters_ yang bisa digunakan untuk _escape_ dari stringnya terus langsung ke _python_.
 
 Ini bisa kita konfirmasi pake `{{ 7 * 7 }}`, dimana kalo bener, kita harusnya liat sama persis, tapi malah 49, berarti RCE:
-![It executed it](image-1.png)
+![It executed it](./assets/image-1.png)
 
 Nah, tinggal cari cara jalanin `ls` dan `cat`, tanpa pake kata di blacklist. Pake [referensi](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection/jinja2-ssti), yang aku perluin pertama adalah class object.
 
@@ -173,7 +173,7 @@ Nah, terus kita akses `__subclasses__`:
 ```
 
 Ini hasilnya list yang **gede** banget.
-![Alt text](image-2.png)
+![Alt text](./assets/image-2.png)
 Aku cari di listnya untuk sesuatu yang bisa buka file (e.g. `open()`) atau yang bisa buka shell (e.g. `check_output()` or `Popen()`).
 
 Di index 352, keliatan tuh, `Popen`. `Popen` nggak ideal sih sebenernya, karena aku cuman pernah pake dia buat buka worker shell, jadi aku nggak familier dengan sintaksnya, tapi yowes.
@@ -191,4 +191,4 @@ Pake ini dengan `ls`, aku nemu flag di `/` dengan nama `flag_ssti.txt`. Udah deh
 ```
 
 🎉🎉🎉🎉
-![WIN](image-3.png)
+![WIN](./assets/image-3.png)
