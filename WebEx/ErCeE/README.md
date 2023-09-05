@@ -37,7 +37,7 @@ and now just, a `; cat /flag.txt #`, and we're done!
 
 ## **ID**
 
-Untuk yang ini, kita diberi [source code](./dist/) ke website PHP yang kalau dikirimi URL, akan pakai nge-ping URL pakai utility `ping` dan ngerender hasilnya ke HTML.
+Untuk yang ini, kita diberi [source code](./dist/) ke website PHP yang kalau dikirimi URL, akan nge-ping si URL pakai utility `ping` dan ngerender hasilnya ke HTML.
 ![GUI, input field with a button titled `execute`](./assets/image-1.png)
 
 Uniknya itu, ini kayaknya nggak bisa sebenernya. Aku nggak tau apa aku yang salah apa bagaimana, tapi menginput `google.com` atau apapun ke input terus submit nggak menghasilkan apa-apa.  
