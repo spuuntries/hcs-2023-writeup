@@ -1,4 +1,4 @@
-# hcs-2023-writeup
+# **hcs-2023-writeup**
 
 HCS CTF 2023 Writeup. Solved 8 out of a lot. All writeups were written bilingually.
 
