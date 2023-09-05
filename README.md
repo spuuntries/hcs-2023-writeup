@@ -2,6 +2,9 @@
 
 HCS CTF 2023 Writeup. Solved 8 out of a lot. All writeups were written bilingually.
 
+First place,
+![amongus](image.png)
+
 List of contents:
 
 1. Web Exploitation:
