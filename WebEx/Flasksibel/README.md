@@ -145,7 +145,7 @@ Kalo kita liat blacklistnya ini memang sepertinya sebuah RCE, tetapi melihat lis
 
 Jadi pintu masuk yang pertama itu melalui mekanisme templatenya, dia menggunakan format string untuk merender variabel `username` ke html.
 
-Yang gak bener itu adalah, kalo kita lihat, dia nggak sanitasi _special characters_ yang bisa digunakan untuk _escape_ dari stringnya terus langsung ke _python_.
+Yang gak bener itu adalah, kalo kita lihat, dia nggak sanitasi _special characters_ yang bisa digunakan untuk _escape_ dari stringnya terus langsung ke python.
 
 Ini bisa kita konfirmasi pake `{{ 7 * 7 }}`, dimana kalo bener, kita harusnya liat sama persis, tapi malah 49, berarti RCE:
 ![It executed it](./assets/image-1.png)
@@ -158,7 +158,7 @@ Untungnya, `dict` udah class dan nggak diban, jadi aku mulai dari situ.
 {{ dict }}
 ```
 
-Abis itu kite perlu `__subclasses__`. Ini biar kita bisa liat keturunan si `dict` class, biar bisa tau yang mana yang bsia kita gunakan untuk ngejalanin utility-utility di atas.
+Abis itu kita perlu `__subclasses__`. Ini biar kita bisa liat keturunan si `dict` class, biar bisa tau yang mana yang bisa kita gunakan untuk ngejalanin utility-utility di atas.
 
 Jadi pertama itu `__class__`, terus `__base__`. Underscorenya diganti pake variasi special, `\x5f`. Sebenernya sih, `__class__` nggak perlu, karena `dict` udah class.
 
